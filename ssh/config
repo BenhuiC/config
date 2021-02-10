@@ -1,0 +1,8 @@
+Host *
+#复用ssh连接
+ControlMaster auto 
+# ssh连接持久化，断开连接后不真正关闭
+ControlPersist yes
+ControlPath ~/.ssh/master-%r@%h:%p
+# 每600秒发送KeepAlive请求(保活)
+ServerAliveInterval 600
